@@ -14,5 +14,14 @@ s1 = s1.replace(s1.substr(4, s2.length), s2);
 
 console.log(s1);
 
-//reverse s1...
+//Using a function to reverse any string.
+s1 = reverse(s1);
 
+function reverse(s) {
+	var ts ='';
+	for (var i = s.length-1; i>=0; i--) {
+		ts += s[i];
+	}
+	return ts;
+}
+console.log(s1);	
