@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-## 
+##
 # Written by Justin Marsh justin.marsh at holbertonschool.com
 #
 # Using Figure 2.2 as a model, issustrate the operation of Insertion-Sort
