@@ -27,15 +27,24 @@ void _init_union_data(unode *arr, int n)
 }
 void _union(unode *n, unode *m)
 {
+	unode *rootn, *rootm;
+
+	rootn = _findroot(n);
+	rootm = _findroot(m);
 	// findroot of n, findroot of m
 	// if they are the same, do nothing
 	// if they are not the same, change the root of the shorter tree to the longer
-	printf("%p\n", m->parent);
-	if (n->depth > m->depth)
-		*(_findroot(n)) = *(_findroot(m));
+	printf("%p\n", rootn->parent);
+	if (rootn->depth > rootm->depth)
+		rootm->parent = rootn;
 	else
-		*(_findroot(m)) = *(_findroot(n));
-	printf("%p\n", m->parent);
+	{
+		rootn->parent = rootm;
+		if (rootn->depth == rootm->depth)
+			rootn->depth++;
+	}
+	printf("%p\n", rootn->parent);
+	printf("%d\n", rootn->depth);
 
 }
 unode *_findroot(unode *n)
