@@ -14,7 +14,7 @@ int main(void)
 	rng2 = malloc(sizeof(int) * UNIONSIZE);
 	rng3 = malloc(sizeof(int) * UNIONSIZE);
 	rng4 = malloc(sizeof(int) * UNIONSIZE);
-	// Build 2 arrays of 10,000 random numbers
+	// Build arrays of UNIONSIZE random numbers
 	srand(time(NULL));
 	for (i = 0; i < UNIONSIZE; i++)
 	{
@@ -23,9 +23,10 @@ int main(void)
 		rng3[i] = rand() % UNIONSIZE;
 		rng4[i] = rand() % UNIONSIZE;
 	}
+
 	// BEGIN CLOCKKEEPING
 	clock_t tic = clock();
-	
+
 	// init nodes
 	_init_union_data(arr, UNIONSIZE);
 	// run unions from rng array rng1 and rng2
@@ -38,6 +39,7 @@ int main(void)
 	{
 		_is_connected(&arr[rng3[i]], &arr[rng4[i]]);
 	}
+
 	// print out the connections for node 0
 	//for (i = 0; i < UNIONSIZE; i++)
 	//{
@@ -49,7 +51,7 @@ int main(void)
 	clock_t toc = clock();
 	printf("Elapsed: %f seconds\n", (double)(toc - tic) / CLOCKS_PER_SEC);
 
-	return 0;
+	return (0);
 }
 /**
  * _init_union_data - Initialize all data in Union array
@@ -100,7 +102,7 @@ unode *_findroot(unode *n)
 	{
 		tmp = tmp->parent;
 		// activate to turn on tree-flattening
-		//n->parent = tmp->parent;
+		n->parent = tmp->parent;
 	}
 	return (tmp);
 }

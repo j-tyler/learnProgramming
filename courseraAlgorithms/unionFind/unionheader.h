@@ -6,10 +6,10 @@
 #include <time.h>
 /**
  * struct unode - node structure for our unionfind implemention
- * @root: address of the root of the node
+ * @parent: address of the parent of the node
  * @depth: the depth of the tree, if current node is root
  */
-typedef struct unode 
+typedef struct unode
 {
 	struct unode *parent;
 	unsigned int depth;
