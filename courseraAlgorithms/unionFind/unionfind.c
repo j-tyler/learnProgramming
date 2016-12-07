@@ -1,6 +1,6 @@
 #include "unionheader.h"
 /**
- * main.c - Build and test the union find algorithm
+ * main.c - Build and speedtest the union find algorithm
  *
  * Return: 0
  */
@@ -39,13 +39,6 @@ int main(void)
 	{
 		_is_connected(&arr[rng3[i]], &arr[rng4[i]]);
 	}
-
-	// print out the connections for node 0
-	//for (i = 0; i < UNIONSIZE; i++)
-	//{
-	//	printf("Node 0 is connected to Node %d?  %d\n",
-	//	i, _is_connected(&arr[0], &arr[i]));
-	//}
 
 	// END CLOCKKEEPING
 	clock_t toc = clock();
